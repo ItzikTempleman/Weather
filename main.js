@@ -2,7 +2,7 @@
 (
     () => {
 
-        const BASE_URL = `http://api.weatherapi.com/v1/current.json?key=`
+        const BASE_URL = `https://api.weatherapi.com/v1/current.json?key=`
         const API_KEY = `49766b5882c44ee8a0341421250705`
 
         window.addEventListener(`load`, async () => {
