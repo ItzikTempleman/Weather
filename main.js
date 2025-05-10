@@ -26,6 +26,9 @@
                     displaySearchHistory()
                 }
             })
+            document.getElementById(`showHistoryBtn`).addEventListener(`click`, () => {
+                displaySearchHistory()
+            })
 
             async function getWeatherData(city) {
                 if (!city || city.trim() === ``) throw new Error(`City name is empty`)
@@ -45,8 +48,8 @@
 
                 cityNameElem.innerText = data.location.name
                 countryElem.innerText = data.location.country
-                tempElem.innerHTML = `${data.current.temp_c} c`
-                conditionElem.innerHTML = data.current.condition.text
+                tempElem.innerText = `${(data.current.temp_c).toFixed(0)}c`
+                conditionElem.innerText = data.current.condition.text
                 iconElem.style.display = `block`
                 iconElem.src = `https:${data.current.condition.icon}`
             }
@@ -76,7 +79,6 @@
                         }
                     }
 
-                    displaySearchHistory()
                 }
             }
 
@@ -92,7 +94,7 @@
 
             function displaySearchHistory() {
 
-                    console.log(searchedCities)
+                console.log(searchedCities)
 
             }
         })

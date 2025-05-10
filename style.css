@@ -5,19 +5,20 @@ body {
 }
 
 img {
-    height: 100px;
-    width: 100px;
+    height: 70px;
+    width: 70px;
 }
 
 .siteTitle {
     font-family: titleFont;
-    font-size: 46px;
+    font-size: 54px;
     gap: 50px;
     margin: 30px;
+    color: #ffd93c;
 }
 
 .temp {
-    font-size: 50px;
+    font-size: 40px;
 }
 
 .cityName {
@@ -30,27 +31,70 @@ img {
     src: url('assets/fonts/Caveat-VariableFont_wght.ttf') format('truetype');
 }
 
-.topBar {
-    margin: 10px;
-    gap: 10px;
+.topBar, .container {
+    margin-left: 140px;
+    gap: 4px;
 }
 
-.searchCityBtn, .saveLocation, .cityInput{
+.searchCityBtn, .saveLocation, .cityInput, .showHistoryBtn {
     border: none;
-    border-radius: 6px;
-    margin: 4px;
     padding: 6px 10px 6px 10px;
 }
 
-.searchCityBtn{
-    color: white;
-    background-color: steelblue;
-}
-.saveLocation{
-    color: white;
-    background-color: darkgray;
+.topBar {
+
+    align-items: center;
+    gap: 8px;
+    width: 70%;
 }
 
-.cityInput{
+.cityInput {
+    border-radius: 6px;
     background-color: #eae9e9;
+
 }
+
+.searchCityBtn, .showHistoryBtn, .saveLocation {
+    border-radius: 30px;
+    color: white;
+    background-color: white;
+}
+
+.searchCityBtn {
+    border: solid 2px steelblue;
+}
+
+.saveLocation {
+    border: solid 2px #ffd93c;
+}
+
+.showHistoryBtn {
+    border: solid 2px dimgray;
+    margin-left: auto;
+}
+
+.bi-search, .bi-clock-history, .bi-floppy-fill {
+    color: dimgray;
+}
+
+.statsContainer {
+    width: 200px;
+    height: 250px;
+    background-color: white;
+    border-radius: 12px;
+    margin: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    align-content: center;
+}
+
+
+
+
+
+
