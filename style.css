@@ -1,0 +1,15 @@
+body {
+    font-family: monospace;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    height: 100px;
+    width: 100px;
+}
+
+.temp{
+    font-size: 50px;
+}
+
