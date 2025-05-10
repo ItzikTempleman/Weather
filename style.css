@@ -9,7 +9,48 @@ img {
     width: 100px;
 }
 
-.temp{
+.siteTitle {
+    font-family: titleFont;
+    font-size: 46px;
+    gap: 50px;
+    margin: 30px;
+}
+
+.temp {
     font-size: 50px;
 }
 
+.cityName {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+@font-face {
+    font-family: 'titleFont';
+    src: url('assets/fonts/Caveat-VariableFont_wght.ttf') format('truetype');
+}
+
+.topBar {
+    margin: 10px;
+    gap: 10px;
+}
+
+.searchCityBtn, .saveLocation, .cityInput{
+    border: none;
+    border-radius: 6px;
+    margin: 4px;
+    padding: 6px 10px 6px 10px;
+}
+
+.searchCityBtn{
+    color: white;
+    background-color: steelblue;
+}
+.saveLocation{
+    color: white;
+    background-color: darkgray;
+}
+
+.cityInput{
+    background-color: #eae9e9;
+}

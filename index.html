@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Weather finder</title>
+    <link rel="icon" href="assets/favicon/favicon.ico" type="image/x-icon">
     <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
     <!-- Bootstrap 5 CSS -->
@@ -13,27 +14,28 @@
 
 </head>
 <body>
+<div class="topBar">
 <h2 class="siteTitle">Weather finder</h2>
-<input id="cityInput" type="text" placeholder="Enter city">
-<br>
-<button id="searchCityBtn">Search weather</button>
-<button id="saveLocation">Save city to list</button>
+    <input class="cityInput" id="cityInput" type="text" placeholder="Enter city">
+    <button class="searchCityBtn" id="searchCityBtn"><i class="bi bi-search"></i>Search weather</button>
+    <button class="saveLocation" id="saveLocation"><i class="bi bi-floppy-fill"></i>Save city to list</button>
+</div>
 <div class="container">
-<div class="cityName">
-    <p id="cityName"></p>
-</div>
-<div class="country">
-    <p id="country"></p>
-</div>
-<div class="temp">
-    <p id="temp"></p>
-</div>
-<div class="condition">
-    <p id="condition"></p>
-</div>
-<div class="condition">
-    <img id="icon" style="display: none">
-</div>
+    <div class="cityName">
+        <p id="cityName"></p>
+    </div>
+    <div class="country">
+        <p id="country"></p>
+    </div>
+    <div class="temp">
+        <p id="temp"></p>
+    </div>
+    <div class="condition">
+        <p id="condition"></p>
+    </div>
+    <div class="condition">
+        <img id="icon" style="display: none">
+    </div>
 </div>
 </body>
 </html>

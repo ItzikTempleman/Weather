@@ -91,13 +91,11 @@
             }
 
             function displaySearchHistory() {
-                console.clear()
-                console.log(`Searched cities:`)
-                for (const city of searchedCities) {
-                    console.log(`•`, city)
-                }
+
+                    console.log(searchedCities)
+
             }
         })
     }
 )()
-//https://github.com/ItzikTempleman/Weather
+
