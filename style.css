@@ -16,6 +16,12 @@ img {
     margin: 30px;
     color: #ffd93c;
 }
+.contentRow {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 20px;
+}
 
 .temp {
     font-size: 40px;
@@ -57,24 +63,19 @@ img {
 .searchCityBtn, .showHistoryBtn, .saveLocation {
     border-radius: 30px;
     color: white;
-    background-color: white;
-}
 
-.searchCityBtn {
-    border: solid 2px steelblue;
 }
-
-.saveLocation {
-    border: solid 2px #ffd93c;
+.searchCityBtn{
+    background-color: lightskyblue;
 }
-
-.showHistoryBtn {
-    border: solid 2px dimgray;
-    margin-left: auto;
+.saveLocation{
+    background-color: #ffd93c;
 }
-
+.showHistoryBtn{
+    background-color: lightgrey;
+}
 .bi-search, .bi-clock-history, .bi-floppy-fill {
-    color: dimgray;
+    color: white;
 }
 
 .statsContainer {
@@ -94,7 +95,48 @@ img {
 }
 
 
+.inputRow{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
 
+.cityInput {
+    flex: 1 0 auto;
+    max-width: 250px;
+}
 
+.searchCityBtn, .saveLocation, .showHistoryBtn {
+    flex: 0 0 auto;
+}
+.historyWrapper {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    width: 180px;
+    gap: 10px;
+}
 
+.historyHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
+.closeHistory i {
+    cursor: pointer;
+    font-size: 20px;
+    color: gray;
+}
+
+.historyPanel {
+    max-height: 300px;
+    overflow-y: auto;
+    width: 180px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    padding: 10px;
+    display: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

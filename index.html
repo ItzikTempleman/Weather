@@ -16,11 +16,13 @@
 <body>
 
 <div class="topBar">
-<h2 class="siteTitle">Weather finder</h2>
-    <input class="cityInput" id="cityInput" type="text" placeholder="Search city weather">
-    <button class="searchCityBtn" id="searchCityBtn"><i class="bi bi-search"></i></button>
-    <button class="saveLocation" id="saveLocation"><i class="bi bi-floppy-fill"></i></button>
-    <button class="showHistoryBtn" id="showHistoryBtn"><i class="bi bi-clock-history"></i></button>
+    <h2 class="siteTitle">Weather finder</h2>
+    <div class="inputRow">
+        <input class="cityInput" id="cityInput" type="text" placeholder="Search city weather">
+        <button class="searchCityBtn" id="searchCityBtn"><i class="bi bi-search"></i></button>
+        <button class="saveLocation" id="saveLocation"><i class="bi bi-floppy-fill"></i></button>
+        <button class="showHistoryBtn" id="showHistoryBtn"><i class="bi bi-clock-history"></i></button>
+    </div>
 </div>
 
 <div class="container">
@@ -30,6 +32,8 @@
     <div class="country">
         <p id="country"></p>
     </div>
+
+    <div class="contentRow">
     <div class="statsContainer">
     <div class="temp">
         <p id="temp"></p>
@@ -41,6 +45,15 @@
         <img id="icon" style="display: none">
     </div>
     </div>
+        <div class="historyWrapper">
+            <div class="historyHeader">
+                <p>Search history</p>
+                <div id="closeHistory"><i class="bi bi-x-circle"></i></div>
+            </div>
+            <div class="historyPanel" id="historyPanel"></div>
+        </div>
+</div>
+
 </div>
 </body>
 </html>

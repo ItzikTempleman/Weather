@@ -8,7 +8,8 @@
         window.addEventListener(`load`, async () => {
             let searchedCities = new Set()
             let lastSearchedCity = ``
-
+            const historyPanel = document.getElementById(`historyPanel`)
+            historyPanel.style.display = `none`
             const cityInput = document.getElementById(`cityInput`)
 
             await loadLastSearchedCity()
@@ -28,6 +29,10 @@
             })
             document.getElementById(`showHistoryBtn`).addEventListener(`click`, () => {
                 displaySearchHistory()
+            })
+
+            document.getElementById(`closeHistory`).addEventListener(`click`, ()=>{
+                historyPanel.style.display = `none`
             })
 
             async function getWeatherData(city) {
@@ -93,9 +98,23 @@
             }
 
             function displaySearchHistory() {
+                historyPanel.style.display = `block`
+                historyPanel.innerHTML = ''
 
-                console.log(searchedCities)
+                const reversedArray = [...searchedCities].reverse()
 
+                for (let item of reversedArray) {
+                    const rowDiv = document.createElement('div')
+                    rowDiv.innerHTML = `<p>${item}</p><hr>`
+                    rowDiv.style.cursor = 'pointer'
+                    rowDiv.addEventListener('click', async () => {
+                        const data = await getWeatherData(item)
+                        displayWeather(data)
+                        lastSearchedCity=item
+                        }
+                    )
+                    historyPanel.appendChild(rowDiv)
+                }
             }
         })
     }
