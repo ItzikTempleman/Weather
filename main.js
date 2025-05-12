@@ -45,18 +45,18 @@
             function displayWeather(data) {
                 cityInput.value = ``
 
-                const cityNameElem = document.querySelector(`.cityName`)
-                const countryElem = document.querySelector(`.country`)
-                const tempElem = document.querySelector(`.temp`)
-                const conditionElem = document.querySelector(`.condition`)
-                const iconElem = document.getElementById(`icon`)
+                const cityName = document.getElementById(`cityName`)
+                const country = document.getElementById(`country`)
+                const temp = document.getElementById(`temp`)
+                const condition = document.getElementById(`condition`)
+                const icon = document.getElementById(`icon`)
 
-                cityNameElem.innerText = data.location.name
-                countryElem.innerText = data.location.country
-                tempElem.innerText = `${(data.current.temp_c).toFixed(0)}c`
-                conditionElem.innerText = data.current.condition.text
-                iconElem.style.display = `block`
-                iconElem.src = `https:${data.current.condition.icon}`
+                cityName.innerText = data.location.name
+                country.innerText = data.location.country
+                temp.innerText = `${(data.current.temp_c).toFixed(0)}c`
+                condition.innerText = data.current.condition.text
+                icon.style.display = `block`
+                icon.src = `https:${data.current.condition.icon}`
             }
 
             function saveCityToHistory(city) {
