@@ -11,50 +11,51 @@
     <!-- Your Custom JS -->
     <link rel="stylesheet" href="style.css?v=1.3">
     <link rel="stylesheet" href="images_layout.css?v=1.3">
-    <script defer src="main.js?v=3"></script>
+    <script defer src="build/main.js?v=3"></script>
 
 </head>
 <body>
-<header>
-    <h2 class="siteTitle">Weather finder</h2>
+<header class="headerDiv">
+    <h2>Weather finder</h2>
 </header>
 
-<div class="topBar">
-        <input class="cityInput" id="cityInput" type="text" placeholder="Search city weather">
-        <button class="searchCityBtn" id="searchCityBtn"><i class="bi bi-search"></i></button>
-        <button class="saveLocation" id="saveLocation"><i class="bi bi-floppy-fill"></i></button>
+
+<main class="mainContainerGrid">
+
+    <div class="searchBarDiv">
+        <input class="searchLocationInput" id="searchLocationInput" type="text" placeholder="Search city weather">
+        <button class="searchLocationBtn" id="searchLocationBtn"><i class="bi bi-search"></i></button>
+        <button class="saveLocationBtn" id="saveLocationBtn"><i class="bi bi-floppy-fill"></i></button>
         <button class="showHistoryBtn" id="showHistoryBtn"><i class="bi bi-clock-history"></i></button>
-</div>
-
-<div class="container">
-    <div class="cityName">
-        <p id="cityName"></p>
-    </div>
-    <div class="country">
-        <p id="country"></p>
     </div>
 
-    <div class="contentRow">
-        <div class="statsContainer">
-            <div class="temp">
-                <p id="temp"></p>
-            </div>
-            <div class="condition">
-                <p id="condition"></p>
-            </div>
-            <div class="icon">
-                <img id="icon" style="display: none">
-            </div>
+    <div class="weatherContainerDiv">
+
+        <div class="locationNameDiv">
+            <div class="cityName"><p id="cityName"></p></div>
+            <div class="country"><p id="country"></p></div>
         </div>
-        <div class="historyWrapper">
-            <div class="historyHeader">
-                <p>Search history</p>
-                <div id="closeHistory"><i class="bi bi-x-circle"></i></div>
-            </div>
+
+        <div class="weatherInfoContainerDiv">
+            <p class="temp" id="temp"></p>
+            <p class="condition" id="condition"></p>
+            <p class="humidity" id="humidity"></p>
+            <p class="feelslike" id="feelslike"></p>
+            <p class="uv" id="uv"></p>
+            <p class ="wind_kph" id="wind_kph"></p>
+            <img class="icon" id="icon">
+        </div>
+
+        <div class="historyContainerDiv">
+            <div class="historyHeader"><p class="historyHeader">Search history</p><i id="closeHistory" class="bi bi-x-circle"></i></div>
             <div class="historyPanel" id="historyPanel"></div>
         </div>
+
     </div>
 
-</div>
+
+    <div class="forecastDiv"></div>
+
+</main>
 </body>
 </html>
