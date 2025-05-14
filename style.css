@@ -170,11 +170,14 @@ img {
 .forecastCard {
     background-color: #1a222f;
     color: white;
-    padding: 8px;
-    margin: 4px;
+    padding: 10px;
+    margin: 10px;
+    gap: 10px;
+    height: 300px;
     border-radius: 10px;
-    width: 100px;
-    text-align: center;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    font-size: 14px;
+    width: 150px;
+}
+
+.forecastTemp{
+    font-size: 32px;
 }

@@ -82,9 +82,9 @@
                 feelslike.innerText = `Feels like: ${data.current.feelslike_c}°C`
                 uv.innerText = `Uv index: ${data.current.uv}`
                 wind_kph.innerText = `Wind speed: ${data.current.wind_kph} KM/H`
-
-                icon.style.display = `block`
                 icon.src = `https:${data.current.condition.icon}`
+                icon.style.display = `block`
+
             }
 
             function displayForecast(forecast) {
@@ -96,12 +96,12 @@
                     for (let timeItem of hour) {
                         html+=`
                 <div class="forecastCard">
+                 <p>${item.date}</p>
                     <p>${timeItem.time.split(' ')[1]}</p>
-                    <p>${item.date}</p>
-                    <p>${timeItem.temp_c}°C</p>
+                    <p class="forecastTemp">${timeItem.temp_c}°C</p>
+                    <img src ="https:${timeItem.condition.icon}">
                 </div>
-                        `
-
+                      `
                     }
                 }
                 forecastDiv.innerHTML=html
@@ -127,6 +127,7 @@
                         try {
                             const data = await getWeatherData(lastCity)
                             displayWeather(data)
+
                             lastSearchedCity = lastCity
                         } catch (err) {
                             console.log(`Could not load last saved city:`, err.message)
@@ -141,6 +142,7 @@
                 try {
                     const data = await getWeatherData(city)
                     displayWeather(data)
+
                     lastSearchedCity = city
                 } catch (err) {
                     console.log(err.message)
