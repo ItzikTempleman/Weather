@@ -4,7 +4,7 @@
 
         const BASE_URL = `https://api.weatherapi.com/v1/current.json?key=`
         const API_KEY = `49766b5882c44ee8a0341421250705`
-        const FORECAST_URL = `pi.weatherapi.com/v1/forecast.json?key=`
+        const FORECAST_URL = `https://api.weatherapi.com/v1/forecast.json?key=`
         window.addEventListener(`load`, async () => {
             let searchedCities = new Set()
             let lastSearchedCity = ``
@@ -46,8 +46,16 @@
             async function getForecastData(city) {
                 if (!city || city.trim() === ``) throw new Error(`City name is empty`)
                 const forecastResponse = await fetch(`${FORECAST_URL}${API_KEY}&q=${city}&days=1&aqi=no&alerts=no`)
-                if (!forecastResponse.ok) throw new Error(`City not found or API error`)
-                return await forecastResponse.json()
+                if (!forecastResponse.ok) {
+                    throw new Error(`City not found or API error`)
+                }
+
+                const json = await forecastResponse.json()
+
+                if (!json.forecast || !json.forecast.forecastday) {
+                    throw new Error(`Response not good`)
+                }
+                return json.forecast.forecastday[0]
             }
 
             function displayWeather(data) {
@@ -81,13 +89,10 @@
             }
 
             function displayForecast(data) {
+                console.log(data)
                 const forecastDiv = document.getElementById(`forecastDiv`)
                 let pTag = document.createElement(`p`)
-                pTag.innerText=`<p>
-
-data
-
-</p>`
+                pTag.innerText = `<p>data</p>`
             }
 
 
@@ -115,6 +120,7 @@ data
                             console.log(`Could not load last saved city:`, err.message)
                         }
                     }
+
 
                 }
             }
