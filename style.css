@@ -125,7 +125,7 @@ img {
     color: #0b131f;
 }
 
-.bi-x-circle, .showHistoryBtn, .historyHeader p, .weatherInfoContainerDiv p , .cityName, .country{
+.bi-x-circle, .showHistoryBtn, .historyHeader p, .weatherInfoContainerDiv p, .cityName, .country {
     color: white;
 }
 
@@ -165,4 +165,16 @@ img {
     padding: 10px;
     display: none;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.forecastCard {
+    background-color: #1a222f;
+    color: white;
+    padding: 8px;
+    margin: 4px;
+    border-radius: 10px;
+    width: 100px;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    font-size: 14px;
 }

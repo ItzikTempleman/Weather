@@ -45,17 +45,16 @@
 
             async function getForecastData(city) {
                 if (!city || city.trim() === ``) throw new Error(`City name is empty`)
-                const forecastResponse = await fetch(`${FORECAST_URL}${API_KEY}&q=${city}&days=1&aqi=no&alerts=no`)
+                const forecastResponse = await fetch(`${FORECAST_URL}${API_KEY}&q=${city}&days=7&aqi=no&alerts=no`)
                 if (!forecastResponse.ok) {
                     throw new Error(`City not found or API error`)
                 }
-
                 const json = await forecastResponse.json()
 
                 if (!json.forecast || !json.forecast.forecastday) {
                     throw new Error(`Response not good`)
                 }
-                return json.forecast.forecastday[0]
+                return json.forecast.forecastday
             }
 
             function displayWeather(data) {
@@ -88,11 +87,24 @@
                 icon.src = `https:${data.current.condition.icon}`
             }
 
-            function displayForecast(data) {
-                console.log(data)
+            function displayForecast(forecast) {
                 const forecastDiv = document.getElementById(`forecastDiv`)
-                let pTag = document.createElement(`p`)
-                pTag.innerText = `<p>data</p>`
+                let html = ``
+
+                for (let item of forecast){
+                    const hour=item.hour
+                    for (let timeItem of hour) {
+                        html+=`
+                <div class="forecastCard">
+                    <p>${timeItem.time.split(' ')[1]}</p>
+                    <p>${item.date}</p>
+                    <p>${timeItem.temp_c}°C</p>
+                </div>
+                        `
+
+                    }
+                }
+                forecastDiv.innerHTML=html
             }
 
 
